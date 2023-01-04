@@ -1,0 +1,154 @@
+/* variables */
+
+:root {
+    --cyan: #2BB3B1;
+    --light-cyan: #4ABEBD;
+    --bright-yellow: #BFDF32;
+    --light-gray: #E6EFF6;
+    --grayish-blue: hsl(218, 22%, 67%);
+    --standard-padding: 40px;
+}
+
+/* basic layout and styling */
+
+html {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--light-gray);
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+
+    width: 720px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 0;
+}
+
+/* individual properties for mobile and desktop */
+
+@media screen and (max-width: 700px) {
+    html {
+        height: auto;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .subscription {
+        border-bottom-left-radius: 0;
+    }
+
+    .advantages {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .subscription {
+        border-bottom-left-radius: 10px;
+    }
+}
+
+/* styling description box */
+
+.description {
+    background-color: white;
+    padding: var(--standard-padding);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    grid-column: 1/-1;
+}
+
+.description h1 {
+    color: var(--cyan);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.description h2 {
+    color: var(--bright-yellow);
+    font-size: 1rem;
+}
+
+.description p{
+    color: var(--grayish-blue);
+    margin: 4px 0;
+}
+
+/* styling subscription box */
+
+.subscription {
+    background-color: var(--cyan);
+    padding: var(--standard-padding);
+}
+
+.subscription h2 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.subscription p {
+    color: white;
+}
+
+.price {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.period {
+    color: var(--light-gray)
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    background: #BFDF32;
+    margin: 30px 0;
+    padding: 20px;
+
+    border-radius: 10px;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+
+    -webkit-box-shadow: 0px 5px 10px #666666;
+    -moz-box-shadow: 0px 5px 10px #666666;
+    box-shadow: 0px 5px 10px #666666;
+
+    color: white;
+    text-decoration: none;
+  }
+
+/* styling advantage box */
+
+.advantages {
+    background-color: var(--light-cyan);
+    padding: var(--standard-padding);
+    border-bottom-right-radius: 10px;
+}
+
+.advantages h2 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.advantages p {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
